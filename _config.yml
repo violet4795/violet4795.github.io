@@ -22,7 +22,7 @@ subtitle: # site tagline that appears below site title in masthead
 name: "mauve"
 description: "너 뭐해 지금"
 url: # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl: # the subpath of your site, e.g. "/blog"
+baseurl: /index
 repository: # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser: # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo: # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
@@ -106,10 +106,11 @@ analytics:
 
 # Site Author
 author:
-  name: "보초 코더"
-  avatar: # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio: "** 저녁 뭐먹지 **"
-  location: "역삼"
+  name: "김현수"
+  avatar: "/assets/images/mine.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  # 여기서 사이즈 css 변경 가능 _sidebar.scss
+  bio: "**매일 저녁 뭐 먹을지 고민하는 사람**"
+  location: "South Korea"
   email:
   links:
     - label: "Email"
@@ -126,7 +127,7 @@ author:
       # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://violet4795.github.com/"
+      url: "https://github.com/violet4795"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
