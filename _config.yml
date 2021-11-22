@@ -107,7 +107,7 @@ analytics:
 # Site Author
 author:
   name: "김현수"
-  avatar: "/assets/images/mine.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar: # "/assets/images/mine.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   # 여기서 사이즈 css 변경 가능 _sidebar.scss
   bio: "**매일 저녁 뭐 먹을지 고민하는 사람**"
   location: "South Korea"
