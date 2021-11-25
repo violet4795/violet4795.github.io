@@ -5,15 +5,17 @@ excerpt: ""
 categories:
   - java
 tags:
-  - java
-last_modified_at: 2021-11-24T12:47:00
+  - java, logging
+last_modified_at: 2021-11-25T16:25:00
 ---
 
 spring boot 토이 프로젝트에 간단한 로그를 남기고싶어서 뭘쓸까하다가
 
 log4j, log4j2, logback, slf4j 등
 
-여러 라이브러리들이 존재하더라
+여러 라이브러리, 프레임워크들이 존재해서
+
+관련 설명자료는 너무 많고, 알고 넘어갈 정도의 개념만 다루고 가면 좋을 것 같다.
 
 # log4j
 
@@ -44,9 +46,21 @@ dependencies {
 }
 ```
 
+디펜던시 추가로 간단하게 적용가능하다.
+
 # logback
 
-logback
+logback은 log4j의 설립자 Ceki Gülcü가 log4j의 후속제품으로 내놓은 로깅 프레임워크.
+[logback 소개](https://logback.qos.ch/manual/introduction.html)  
+[log4j to logback reasonsToSwitch](https://logback.qos.ch/reasonsToSwitch.html)  
+공식문서에서는 log4j에 비해 10배이상 더 빠르고, 메모리공간도 적고,
+
+['간단히 말해서 logback은 더 나은 log4j입니다.'](https://logback.qos.ch/reasonsToSwitch.html#inSummary)
+
+라고 한다.
+
+그래서 그런지 [log4j to logback](https://www.google.com/search?q=log4j+to+logback),
+[log4j logback migration](https://www.google.com/search?q=log4j+logback+migration) 이라는 검색을 하면 한/영 할 것 없이 관련 자료가 많이보인다.
 
 # log4j2
 
@@ -120,23 +134,27 @@ apache입장에서는<br>
 
 로깅방식에 [facade 패턴](https://ko.wikipedia.org/wiki/%ED%8D%BC%EC%82%AC%EB%93%9C_%ED%8C%A8%ED%84%B4)을 적용해  
 서로 다른 로깅 구현체간의 코드 변경등을 원활하게 가능하게 해주는 라이브러리  
-2015년 지원이 끝난 log4j를 다른 라이브러리로 바꾸고싶다면
+2015년 지원이 끝난 log4j를 다른 프레임워크로 바꾸고싶다면
 
 기존 dependency를 수정하고,  
 로깅이 들어간 모든 코드파일에서  
-import했던 라이브러리들을 수정해주는 작업을 거쳐야한다...  
+import했던 로깅 프레임워크, 라이브러리를 수정해주는 작업을 거쳐야한다...  
 log4j to log4j2의 마이그레이션이라면 가이드가 있고 여러 사례들이 존재한다.  
 [log4j to log4j2 migration](https://logging.apache.org/log4j/2.x/manual/migration.html)
 
-모든파일에 손을 대는 것은 ide에서 지원하는 일괄 변경기능으로 어느정도는 가능하지만  
-공식문서에도 있듯이 Appenders 등 log4j 1.x 구현 내부 메서드에 접근이라도 해서  
+로깅을 사용한 모든파일에 손을 대는 것은...  
+ide에서 지원하는 일괄 변경기능으로 어느정도는 가능하지만  
+공식문서에도 있듯이 Appenders같은 log4j 1.x 구현 내부 메서드에 직접 접근 해서  
 개별 구현을 시도했다면  
-어지러운 작업이 될 것이다.
+상당히 어지러운 작업이 될 것이다.
 
 이런 작업들을 돕기 위해 추상화된 라이브러리가 slf4j.  
-추상화되어 있다보니 단독으로는 사용이 되지 않고, logging, log4j등 실제 로깅 프레임워크 구현체와 함께 사용된다.
+추상화되어 있다보니 단독으로는 사용이 되지 않고, logback, log4j등  
+logging 프레임워크 구현체와 함께 사용된다.
 
-spring boot에서는 기본지원하는 라이브러리로 logging과 slf4j가 제공된다.
+spring boot에서는 기본지원하는 로깅기능으로 logback + slf4j가 제공된다.
+
 <br><br>
 참고:
 [https://stackoverflow.com/questions/41498021/is-it-worth-to-use-slf4j-with-log4j2](https://stackoverflow.com/questions/41498021/is-it-worth-to-use-slf4j-with-log4j2)
+[slf4j를 사용해야 하는 이유]](https://inyl.github.io/programming/2017/05/05/slf4j.html)
