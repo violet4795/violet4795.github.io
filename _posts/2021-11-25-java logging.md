@@ -5,7 +5,8 @@ excerpt: ""
 categories:
   - java
 tags:
-  - java, logging
+  - java
+  - logging
 last_modified_at: 2021-11-25T16:25:00
 ---
 
@@ -156,5 +157,5 @@ spring boot에서는 기본지원하는 로깅기능으로 logback + slf4j가 �
 
 <br><br>
 참고:
-[https://stackoverflow.com/questions/41498021/is-it-worth-to-use-slf4j-with-log4j2](https://stackoverflow.com/questions/41498021/is-it-worth-to-use-slf4j-with-log4j2)
-[slf4j를 사용해야 하는 이유]](https://inyl.github.io/programming/2017/05/05/slf4j.html)
+[https://stackoverflow.com/questions/41498021/is-it-worth-to-use-slf4j-with-log4j2](https://stackoverflow.com/questions/41498021/is-it-worth-to-use-slf4j-with-log4j2)  
+[slf4j를 사용해야 하는 이유](https://inyl.github.io/programming/2017/05/05/slf4j.html)
