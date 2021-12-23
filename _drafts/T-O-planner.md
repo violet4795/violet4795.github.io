@@ -1,5 +1,5 @@
 ---
-title: ""
+title: "나중에 블로깅하고 싶은 주제들"
 excerpt: ""
 
 categories:
@@ -41,6 +41,7 @@ eval이나 function을 실행하는 코드를 만나면 새로운 실행 컨텍�
 
 
 ### 클로저
+
 ### 호이스팅
 ### this
 ### 
@@ -64,11 +65,13 @@ DOM트리와 CSSOM트리로 파싱되고
 # CSS
 
 
-# 경력 정리
+<!-- # 경력 정리
 ## 써봤던 기술들
 ### VueJS
 ### 
 ## trouble shooting 경험
+## 코테 로우 미들급
+ -->
 
 
 # 기타 개념들
@@ -103,6 +106,3 @@ DOM트리와 CSSOM트리로 파싱되고
 ## MVC? MVC2? MVVM? 
 ## WEBPACK이란?
 
-# 코테 로우 미들급
-
-programmers 2단계~3단계 JS풀이 연습
