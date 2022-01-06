@@ -107,3 +107,34 @@ DOM트리와 CSSOM트리로 파싱되고
 ## MVC? MVC2? MVVM? 
 ## WEBPACK이란?
 
+## 모듈 패턴이란?
+모듈패턴은 전체어플리케이션의 일부를 독립된 코드로 분리하여 만드는것.
+javascript 코딩 패턴 중 하나다.
+
+javascript에서는 클로저나 익명함수를 통해 구현되며,
+
+장점으로는
+public한 공간에서 private한 변수를 쓸 수 있다.
+그리고 큰 어플리케이션을 작은 모듈들로 나누어 설계가 가능하다.
+묵시적 전역선언을 피하고, 은닉, 다형성, 상속을 통해 객체 지향적인 설계가 가능해진다.
+[ben cherry - module pattern](http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html)
+
+## 이벤트 버블링 이벤트 캡쳐 이벤트 위임
+이벤트 버블링은 발생한 이벤트가 부모 태그를 타고 전파되는 것.
+
+이벤트 캡처은 발생한 이벤트가 하위 태그를 타고 전파되는 것. 
+
+캡처링은 기본적으로 비활성화 되어있으며 이벤트를 달아줄때 capture:true 옵션을 줘서 활성화가 가능하다.
+
+이벤트가 상위 태그를 타고 이동한다?
+
+p태그에 이벤트 달고 난 뒤에 새로 생겨난 p태그에도 이벤트를 달고싶으면
+
+매번 달아줘야하나? 하는 문제는 어떻게하면 효율적인가
+
+p태그들을 하나의 상위태그를 감싸서 거기에 이벤트를 달아주면
+
+버블링덕분에 상위태그에 있는 이벤트 감지가 가능하다.
+
+[event bubbling, capture, delegation](https://joshua1988.github.io/web-development/javascript/event-propagation-delegation/)
+
