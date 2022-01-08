@@ -141,3 +141,23 @@ p태그들을 하나의 상위태그를 감싸서 거기에 이벤트를 달아�
 
 [event bubbling, capture, delegation](https://joshua1988.github.io/web-development/javascript/event-propagation-delegation/)
 
+
+## 브라우저 동작원리
+
+## 쿠키와 세션
+
+### 세션이란?
+
+쿠키와 세션의 공통점    
+HTTP프로토콜의 비상태성(stateless), 비연결성(connectless)을 보완하기 위해 사용된다.
+
+
+
+## 로컬스토리지, 세션스토리지, 쿠키, 세션, 
+HTML5에서 추가된 저장소,
+
+세션스토리지와 로컬스토리지의 차이점은 영구성이다.
+
+로컬스토리지 데이터는 사용자가 지우지 않는 한 계속 남아있다.
+
+세션스토리지 데이터는 윈도우나 브라우저 탭을 닫을 경우 사라진다.
