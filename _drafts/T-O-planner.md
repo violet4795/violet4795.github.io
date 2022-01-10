@@ -188,3 +188,76 @@ HTML5에서 추가된 저장소, 웹스토리지가 있다.
 
 
 토큰은 쿠키나 웹스토리지에 저장된다. 마찬가지로 stateless하며, 
+
+
+... TODO
+
+
+## 익명함수와 일반함수, 화살표함수(ES6) 차이점
+
+## 디바운싱과 쓰로틀링?
+[출처 : https://dev-note-97.tistory.com/278?category=912917](https://dev-note-97.tistory.com/278?category=912917)
+```js
+document.addEventListener("scroll", () => {
+    const scrollValue = document.documentElement.scrollTop;
+    console.log(scrollValue);
+})
+```
+해당 소스를 아무 스크롤이 있는 페이지에 넣고 스크롤링 해보자.   
+![스크롤...]({{ "/assets/images/scroll_infinity.png" | relative_url }})   
+어마어마한 스크롤을 볼 수 있다.   
+
+```js
+// 디바운싱: 이벤트가 맨 마지막에만 발생하도록!
+let timer;
+
+document.addEventListener("scroll", () => {   
+    if (timer) {   
+        clearTimeout(timer); 
+    }
+    timer = setTimeout(() => {
+        const scrollValue = document.documentElement.scrollTop;
+        console.log(scrollValue);
+    }, 500);
+})
+
+
+
+// 쓰로틀링: 이벤트가 한번 발생하면 일정 시간 동안은 발생하지 않음!
+let timer;
+
+document.addEventListener("scroll", () => {
+    if (!timer) {
+        timer = setTimeout(() => {
+            timer = null;
+            const scrollValue = document.documentElement.scrollTop;
+            console.log(scrollValue);
+        }, 500);
+    }
+})
+```
+
+디바운싱은 ajax, axios같은 서버이벤트 콜같은 정확한 시점이 필요한 때에 사용된다.
+
+쓰로틀링은 성능문제, 스크롤을 오르내릴때 사용되며, 둘은 서로 바꾸어 구현도 가능하다.
+
+왜냐하면 실행 수를 제한하는 공통점이 있기때문
+
+## 클로저와 VueX, redux 그리고 메모리 관리 
+variable object = {key, value 형태로 쭉 이어지는 변수들... }
+
+[0]은 나고 1은 내부모 이런식으로 전역 scope 까지 list형태로 이어지는 context scope
+
+만약 최하위 scope에 있는 함수가 클로저가 형성되어 전역변수까지 전부 이어지는데, 이거하나때문에 모든 variable object들이 다 기억 되는 상황.
+
+그 양이 얼마나 있을지는...
+
+예를 들어 VueX react에서는 redux인데, 이들은 실제로 클로저로 구현되어 있습니다.
+
+redux, VueX 둘다 여러가지 컴포넌트에서 전역적으로 상태관리를 하기 위함에 목적을 둔 라이브러리인데, 
+
+여기에 들어간 참조값들은 브라우저가 꺼지기 직전까지 직접초기화 하지않는한, 사라지지 않습니다.
+
+이러한 메모리 구조는 효율적이라고 보긴힘들죠.
+
+## prototype과 class type 진짜 뭐가다른건지 상속 그놈의 상속
