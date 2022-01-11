@@ -123,8 +123,7 @@ DOM트리와 CSSOM트리로 파싱되고
 
 
 ## interview 질문들
-### local storage, session storage 차이점
-틀리게 답변함.
+
 ### token을 썼을때, 세션과 어떤차이?
 세션처리를 위한 백엔드 서버가 존재하는지 여부가 가장 큰차이
 제대로 답변 못한듯함.
@@ -285,3 +284,11 @@ redux, VueX 둘다 여러가지 컴포넌트에서 전역적으로 상태관리�
 이러한 메모리 구조는 효율적이라고 보긴힘들죠.
 
 ## prototype과 class type 진짜 뭐가다른건지 상속 그놈의 상속
+
+## JSON XML 차이점?
+
+## REST API 디자인 방법?
+
+## HTTP/0.9, HTTP/1.0,  HTTP/1.1,  HTTP,  HTTPS 의 특징들
+
+## serializable // 직렬화는 뭘까 deserializable // 이건 병렬화인가?
