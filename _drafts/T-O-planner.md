@@ -88,6 +88,9 @@ DOM트리와 CSSOM트리로 파싱되고
 
 # 기타 개념들
 ## 쿠키 세션 토큰
+
+쿠세크
+
 ## 명령형 프로그래밍 선언형 프로그래밍
 명령형 프로그래밍과 선언형 프로그래밍
 
@@ -131,3 +134,154 @@ DOM트리와 CSSOM트리로 파싱되고
 해본적이 없어서 모른다고 답변
 ### vue react 차이점?
 ### 컴포넌트 단위 작성해본적이 있는지?
+## 모듈 패턴이란?
+모듈패턴은 전체어플리케이션의 일부를 독립된 코드로 분리하여 만드는것.
+javascript 코딩 패턴 중 하나다.
+
+javascript에서는 클로저나 익명함수를 통해 구현되며,
+
+장점으로는
+public한 공간에서 private한 변수를 쓸 수 있다.
+그리고 큰 어플리케이션을 작은 모듈들로 나누어 설계가 가능하다.
+묵시적 전역선언을 피하고, 은닉, 다형성, 상속을 통해 객체 지향적인 설계가 가능해진다.
+[ben cherry - module pattern](http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html)
+
+## 이벤트 버블링 이벤트 캡쳐 이벤트 위임
+이벤트 버블링은 발생한 이벤트가 부모 태그를 타고 전파되는 것.
+
+이벤트 캡처은 발생한 이벤트가 하위 태그를 타고 전파되는 것. 
+
+캡처링은 기본적으로 비활성화 되어있으며 이벤트를 달아줄때 capture:true 옵션을 줘서 활성화가 가능하다.
+
+이벤트가 상위 태그를 타고 이동한다?
+
+p태그에 이벤트 달고 난 뒤에 새로 생겨난 p태그에도 이벤트를 달고싶으면
+
+매번 달아줘야하나? 하는 문제는 어떻게하면 효율적인가
+
+p태그들을 하나의 상위태그를 감싸서 거기에 이벤트를 달아주면
+
+버블링덕분에 상위태그에 있는 이벤트 감지가 가능하다.
+
+[event bubbling, capture, delegation](https://joshua1988.github.io/web-development/javascript/event-propagation-delegation/)
+
+
+## 브라우저 동작원리
+
+## 쿠키와 세션
+
+### 세션이란?
+
+쿠키와 세션의 공통점    
+HTTP프로토콜의 비상태성(stateless), 비연결성(connectless)을 보완하기 위해 사용된다.
+
+
+
+## 로컬스토리지, 세션스토리지, 쿠키, 세션, 토큰
+세션은 쿠키보다 안전하고, 쿠키보다는 서버가 처리하는 속도덕에 약간 느리다.   
+
+하지만 용량에 제한이 없다.
+
+세션은 결국 쿠키를 사용하긴 한다. SESSION_ID값으로 서로 주고받으며 세션이 발급되었음을 증명하고,   
+
+실질적인 값은 서버가 담당한다.
+
+쿠키는 클라이언트가 데이터를 갖고있으며 4KB용량에 300개까지 밖에 가질 수 없고,
+
+한 도메인당 20개까지의 제한이 걸려있다.
+
+보안적인 측면에서 세션은 데이터가 서버에있고, 쿠키는 클라이언트가 쥐고있기에
+
+보안은 세션이 유리하다.
+
+세션이 좋다고 막 쓰지않고, 쿠키를 쓰는이유는 세션처리를 서버가 담당하기 때문에,
+
+서버의 부하를 줄이는데에 있다.
+
+쿠키도 좋지만.. 쿠키의 용량, 보안적인 측면의 제한을 극복하기 위해 
+
+HTML5에서 추가된 저장소, 웹스토리지가 있다.
+
+웹스토리지의 두가지 영역 세션스토리지와 로컬스토리지
+
+세션스토리지와 로컬스토리지의 차이점은 영구성이다.
+
+로컬스토리지 데이터는 사용자가 지우지 않는 한 계속 남아있다.
+
+세션스토리지 데이터는 윈도우나 브라우저 탭을 닫을 경우 사라진다.
+
+
+토큰은 쿠키나 웹스토리지에 저장된다. 마찬가지로 stateless하며, 
+
+
+... TODO
+
+
+## 익명함수와 일반함수, 화살표함수(ES6) 차이점
+
+## 디바운싱과 쓰로틀링?
+[출처 : https://dev-note-97.tistory.com/278?category=912917](https://dev-note-97.tistory.com/278?category=912917)
+```js
+document.addEventListener("scroll", () => {
+    const scrollValue = document.documentElement.scrollTop;
+    console.log(scrollValue);
+})
+```
+해당 소스를 아무 스크롤이 있는 페이지에 넣고 스크롤링 해보자.   
+![스크롤...]({{ "/assets/images/scroll_infinity.png" | relative_url }})   
+어마어마한 스크롤을 볼 수 있다.   
+
+```js
+// 디바운싱: 이벤트가 맨 마지막에만 발생하도록!
+let timer;
+
+document.addEventListener("scroll", () => {   
+    if (timer) {   
+        clearTimeout(timer); 
+    }
+    timer = setTimeout(() => {
+        const scrollValue = document.documentElement.scrollTop;
+        console.log(scrollValue);
+    }, 500);
+})
+
+
+
+// 쓰로틀링: 이벤트가 한번 발생하면 일정 시간 동안은 발생하지 않음!
+let timer;
+
+document.addEventListener("scroll", () => {
+    if (!timer) {
+        timer = setTimeout(() => {
+            timer = null;
+            const scrollValue = document.documentElement.scrollTop;
+            console.log(scrollValue);
+        }, 500);
+    }
+})
+```
+
+디바운싱은 ajax, axios같은 서버이벤트 콜같은 정확한 시점이 필요한 때에 사용된다.
+
+쓰로틀링은 성능문제, 스크롤을 오르내릴때 사용되며, 둘은 서로 바꾸어 구현도 가능하다.
+
+왜냐하면 실행 수를 제한하는 공통점이 있기때문
+
+## 클로저와 VueX, redux 그리고 메모리 관리 
+variable object = {key, value 형태로 쭉 이어지는 변수들... }
+
+[0]은 나고 1은 내부모 이런식으로 전역 scope 까지 list형태로 이어지는 context scope
+
+만약 최하위 scope에 있는 함수가 클로저가 형성되어 전역변수까지 전부 이어지는데, 이거하나때문에 모든 variable object들이 다 기억 되는 상황.
+
+그 양이 얼마나 있을지는...
+
+예를 들어 VueX react에서는 redux인데, 이들은 실제로 클로저로 구현되어 있습니다.
+
+redux, VueX 둘다 여러가지 컴포넌트에서 전역적으로 상태관리를 하기 위함에 목적을 둔 라이브러리인데, 
+
+여기에 들어간 참조값들은 브라우저가 꺼지기 직전까지 직접초기화 하지않는한, 사라지지 않습니다.
+
+이러한 메모리 구조는 효율적이라고 보긴힘들죠.
+
+## prototype과 class type 진짜 뭐가다른건지 상속 그놈의 상속
