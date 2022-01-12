@@ -285,10 +285,51 @@ redux, VueX 둘다 여러가지 컴포넌트에서 전역적으로 상태관리�
 
 ## prototype과 class type 진짜 뭐가다른건지 상속 그놈의 상속
 
+
 ## JSON XML 차이점?
+
+json xml 두개는 데이터 전달에 목적을 둔다.
 
 ## REST API 디자인 방법?
 
-## HTTP/0.9, HTTP/1.0,  HTTP/1.1,  HTTP,  HTTPS 의 특징들
+## HTTP/0.9, HTTP/1.0,  HTTP/1.1, HTTP/2.0,  HTTP,  HTTPS 의 특징들
 
+#### HTTP/0.9 
+최초의 문서화 버전   
+메서드는 GET뿐이오  
+헤더도 없소   
+html파일만 전송가능했소   
+문제가 생기면 HTML파일안에 문제의 설명과 함께 되돌려져 보내짐.
+
+#### HTTP V1.0
+버전정보가 GET라인에 붙는 형태로 붙기시작함   
+상태코드도 응답의 시작라인에 붙음     
+HTTP 헤더가 붙기시작했다. 그로인해 메타데이터와 확장가능해짐.   
+```HTML
+GET /mypage.html HTTP/1.0
+User-Agent: NCSA_Mosaic/2.0 (Windows 3.1)
+
+200 OK
+Date: Tue, 15 Nov 1994 08:12:31 GMT
+Server: CERN/3.0 libwww/2.17
+Content-Type: text/html
+<HTML>
+A page with an image
+  <IMG SRC="/myimage.gif">
+</HTML>
+
+<!--위 요청에서 이미지 내려받을때의 응답-->
+GET /myimage.gif HTTP/1.0
+User-Agent: NCSA_Mosaic/2.0 (Windows 3.1)
+
+200 OK
+Date: Tue, 15 Nov 1994 08:12:32 GMT
+Server: CERN/3.0 libwww/2.17
+Content-Type: text/gif
+(image content)
+```
+
+
+[wiki_HTTP](https://ko.wikipedia.org/wiki/HTTP)
+[mozila_evolution_of_HTTP](https://developer.mozilla.org/ko/docs/Web/HTTP/Basics_of_HTTP/Evolution_of_HTTP)
 ## serializable // 직렬화는 뭘까 deserializable // 이건 병렬화인가?
