@@ -333,3 +333,7 @@ Content-Type: text/gif
 [wiki_HTTP](https://ko.wikipedia.org/wiki/HTTP)
 [mozila_evolution_of_HTTP](https://developer.mozilla.org/ko/docs/Web/HTTP/Basics_of_HTTP/Evolution_of_HTTP)
 ## serializable // 직렬화는 뭘까 deserializable // 이건 병렬화인가?
+
+### n사 자꾸 렌더링 되는 그런부분은 어떻게해야하는가?
+
+### 
