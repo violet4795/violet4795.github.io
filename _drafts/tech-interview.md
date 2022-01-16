@@ -292,6 +292,7 @@ json xml 두개는 데이터 전달에 목적을 둔다.
 
 ## REST API 디자인 방법?
 
+REST API ? 
 ## HTTP/0.9, HTTP/1.0,  HTTP/1.1, HTTP/2.0,  HTTP,  HTTPS 의 특징들
 
 #### HTTP/0.9 
@@ -334,6 +335,8 @@ Content-Type: text/gif
 [mozila_evolution_of_HTTP](https://developer.mozilla.org/ko/docs/Web/HTTP/Basics_of_HTTP/Evolution_of_HTTP)
 ## serializable // 직렬화는 뭘까 deserializable // 이건 병렬화인가?
 
-### n사 자꾸 렌더링 되는 그런부분은 어떻게해야하는가?
+### 그리드 하단 리스트 렌더링이 잦게되는 부분은 어떻게해야하는가?
+컴포넌트로 필요부분을 감싸서, 전후 DOM을 비교하거나
+가상 DOM을 이용해, 바뀐부분만 렌더링이 되도록 구성해야함.
 
 ### 할말이 너무많은데 
