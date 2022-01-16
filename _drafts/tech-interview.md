@@ -217,6 +217,8 @@ HTML5에서 추가된 저장소, 웹스토리지가 있다.
 
 
 ## 익명함수와 일반함수, 화살표함수(ES6) 차이점
+화살표함수특 : 일반함수와 다르게 this바인딩 과정이 없음. 그래서 전역이아닌 나를 호출한 놈이 this로 바인딩 된 채로 작동함
+
 
 ## 디바운싱과 쓰로틀링?
 [출처 : https://dev-note-97.tistory.com/278?category=912917](https://dev-note-97.tistory.com/278?category=912917)
